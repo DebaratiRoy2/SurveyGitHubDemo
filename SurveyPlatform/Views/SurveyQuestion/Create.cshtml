@@ -1,0 +1,21 @@
+﻿<script src="~/js/AddSurvey.js"></script>
+<div class="card">
+    <div class="card-header">Create your Survey</div>
+    <div class="card-body">
+        <label>Enter the Title of your Survey <span style="color: red;">*</span></label>
+        <input type="text" class="form-control" id="title" />
+    </div>
+    <div class="card-body">
+        <label>Enter Description</label>
+        <input type="text" class="form-control" id="description" />
+    </div>
+    <div class="card-body" id="questionsContainer"></div>
+    <div class="card-body">
+        <button type="button" onclick="addQuestion('rating')" class="btn btn-primary">Click to add rating based question</button>
+        <button type="button" onclick="addQuestion('text')" class="btn btn-primary">Click to add description based question</button>
+    </div>
+    <div class="card-body">
+        <button type="submit" onclick="createSurvey()" class="btn btn-success">Create Survey</button>
+        <button type="button" class="btn btn-secondary" onclick="navigateToDetails()">Back</button>
+    </div>
+</div>

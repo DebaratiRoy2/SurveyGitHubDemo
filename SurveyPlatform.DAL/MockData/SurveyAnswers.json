@@ -1,0 +1,90 @@
+[
+  {
+    "Id": 1,
+    "SurveyTitle": "Bus Journey Feedback",
+    "SurveyAnswers": [
+      {
+        "Answer": "4",
+        "QuestionTitle": "Punctuality",
+        "QuestionType": 0
+      },
+      {
+        "Answer": "2",
+        "QuestionTitle": "Comfort",
+        "QuestionType": 0
+      },
+      {
+        "Answer": "3",
+        "QuestionTitle": "Eminities",
+        "QuestionType": 0
+      },
+      {
+        "Answer": "3",
+        "QuestionTitle": "Cleanliness",
+        "QuestionType": 0
+      },
+      {
+        "Answer": "2",
+        "QuestionTitle": "Pickup/drop location",
+        "QuestionType": 0
+      },
+      {
+        "Answer": "beds are hard, pickup location was not exact",
+        "QuestionTitle": "any additional suggestions?",
+        "QuestionType": 1
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "SurveyTitle": "Bus Journey Feedback",
+    "SurveyAnswers": [
+      {
+        "Answer": "4",
+        "QuestionTitle": "Punctuality",
+        "QuestionType": 0
+      },
+      {
+        "Answer": "2",
+        "QuestionTitle": "Comfort",
+        "QuestionType": 0
+      },
+      {
+        "Answer": "4",
+        "QuestionTitle": "Eminities",
+        "QuestionType": 0
+      },
+      {
+        "Answer": "4",
+        "QuestionTitle": "Cleanliness",
+        "QuestionType": 0
+      },
+      {
+        "Answer": "2",
+        "QuestionTitle": "Pickup/drop location",
+        "QuestionType": 0
+      },
+      {
+        "Answer": "bus was very late.",
+        "QuestionTitle": "any additional suggestions?",
+        "QuestionType": 1
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "SurveyTitle": "Product feedback survey",
+    "SurveyAnswers": [
+      {
+        "Answer": "4",
+        "QuestionTitle": "how would you rate our product?",
+        "QuestionType": 0
+      },
+      {
+        "Answer": "good value for money, but lags after using for longer period of time",
+        "QuestionTitle": "any suggestions?",
+        "QuestionType": 1
+      }
+    ]
+  }
+]

@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "All Surveys";
+    // Reference to AddResponse.js
+    <script src="~/js/AddResponse.js"></script>
+}
+
+@if (Model != null && Model.Count > 0)
+{
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <h3>Select below surveys to continue:</h3>
+        <div class="row">
+            @foreach (var survey in Model)
+            {
+                //create a card view for each survey displaying the survey name and description
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">@survey.Title</h5>
+                            <p class="card-text">@survey.Description</p>
+                            <a href="SurveyQuestion/Details/@survey.Id" class="btn-outline-primary">Start Survey</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+else
+{
+    <div class="card">
+        <div class="card-body">
+            <p>No surveys available. Kindly create surveys first.</p>
+        </div>
+    </div>
+}

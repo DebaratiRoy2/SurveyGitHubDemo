@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Create survey";
+    // Reference to AddResponse.js
+    <script src="~/js/AddResponse.js"></script>
+}
+<div class="text-center">
+    <h2>Submit your response</h2>
+    <h4>@Model.Title</h4>
+    <p>@Model.Description</p>
+    <div class="row justify-content-center">
+        @for (int i = 0; i < Model.Questions.Count; i++)
+        {
+            <div class="col-md-8">
+                <div class="border p-3 mb-3">
+                    <p class="questionTitle"><strong>@Model.Questions[i].QuestionText</strong></p>
+                    @if (Model.Questions[i].Type.ToString() == "Detail")
+                    {
+                        <input type="text" id="txtAnswer@(i + 1)" class="form-control" />
+                    }
+                    else if (Model.Questions[i].Type.ToString() == "Rating")
+                    {
+                        <div class="d-flex justify-content-between form-control">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="rating@(i + 1)" value=5>Excellent
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="rating@(i + 1)" value=4>Good
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="rating@(i + 1)" value=3>Average
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="rating@(i + 1)" value=2>Poor
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="rating@(i + 1)" value=1>Worst
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+        <div class="col-md-8">
+            <button onclick="fnSubmitResponse('@Model.Title')" class="btn btn-success">Submit</button>
+            <button onclick="fnCancel()" class="btn btn-secondary">Cancel</button>
+        </div>
+    </div>
+</div>

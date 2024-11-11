@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Responses";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<div class="card">
+    <div class="card-header">
+        <h2>Survey Answer Details</h2>
+    </div>
+
+    <div class="card-body">
+        <div class="col-md-10">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Survey Title - @Model.Title</h3>
+                    <a href="@Url.Action("Index", "SurveyAnswer")" style="float:inline-end;" class="btn-outline-primary">Back to List</a>
+                    <h5 class="card-subtitle mb-3">Total number of responses submitted - @Model.Count</h5>
+                    @foreach (var answer in Model.SurveyAnswers)
+                    {
+                        @if (answer.QuestionType == 1)
+                        {
+                            <div class="mb-3 border p-3">
+                                <h6 class="card-subtitle mb-2">@answer.QuestionTitle</h6>
+                                <p class="card-text">
+                                    @foreach (var item in answer.Answer.Split('¦'))
+                                    {
+                                        <ul>
+                                            <li>@item</li>
+                                        </ul>
+                                    }
+                                </p>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="mb-3 border p-3">
+                                <h6 class="card-subtitle mb-2">@answer.QuestionTitle</h6>
+                                <p class="card-text">Average rating
+                                    @{
+                                        var rating = float.Parse(answer.Answer);
+                                        var fullStars = (int)rating;
+                                        var halfStar = rating - fullStars >= 0.5;
+                                    }
+                                    @for (int i = 0; i < fullStars; i++)
+                                    {
+                                        <i class="fas fa-star"></i>
+                                    }
+                                    @if (halfStar)
+                                    {
+                                        <i class="fas fa-star-half-alt"></i>
+                                    }
+                                    @for (int i = fullStars + (halfStar ? 1 : 0); i < 5; i++)
+                                    {
+                                        <i class="far fa-star"></i>
+                                    }
+                                    &nbsp;@answer.Answer
+                                </p>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

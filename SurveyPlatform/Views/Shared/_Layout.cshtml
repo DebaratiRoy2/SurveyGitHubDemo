@@ -1,9 +1,14 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var currentController = ViewContext.RouteData.Values["Controller"]?.ToString();
+    var currentAction = ViewContext.RouteData.Values["Action"]?.ToString();
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - SurveyPlatform</title>
+    <title>SurveyPlatform</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/SurveyPlatform.styles.css" asp-append-version="true" />
@@ -12,21 +17,20 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Survey Website</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Create a Survey</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="SubmitResponse">Submit Responses</a>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link @(currentController == "Home" ? "text-dark" : "")" asp-controller="Home" asp-action="Index">Survey Website</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(currentController == "SurveyQuestion" && currentAction == "Create" ? "text-dark" : "")" asp-controller="SurveyQuestion" asp-action="Create">Create a Survey</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(currentController == "SurveyQuestion" && (currentAction == "Index" || currentAction == "Details") ? "text-dark" : "")" asp-controller="SurveyQuestion" asp-action="Index">Submit Responses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link @(currentController == "SurveyAnswer"? "text-dark" : "")" asp-controller="SurveyAnswer" asp-action="Index">View Responses</a>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
@@ -35,10 +39,10 @@
             @RenderBody()
         </main>
     </div>
-
+    
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - SurveyPlatform - <a asp-area="" asp-controller="Home" asp-action="KnowMore">Know More</a>
+            &copy; 2024 - SurveyPlatform <a asp-area="" asp-controller="Home" asp-action="KnowMore">Know More</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

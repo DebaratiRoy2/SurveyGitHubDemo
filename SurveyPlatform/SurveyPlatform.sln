@@ -4,8 +4,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SurveyPlatform", "SurveyPlatform.csproj", "{D7E1A8E8-9B80-42B6-A3E5-93174F6A7523}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2F659E38-E265-415E-8CBB-5BF195301713} = {2F659E38-E265-415E-8CBB-5BF195301713}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyPlatform.DAL", "..\SurveyPlatform.DAL\SurveyPlatform.DAL.csproj", "{2F659E38-E265-415E-8CBB-5BF195301713}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SurveyPlatform.BAL", "..\SurveyPlatform.BAL\SurveyPlatform.BAL.csproj", "{2DCC765F-C4E5-4205-8BF9-3B32132719F3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2F659E38-E265-415E-8CBB-5BF195301713} = {2F659E38-E265-415E-8CBB-5BF195301713}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurveyPlatform.Test", "..\SurveyPlatform.Test\SurveyPlatform.Test.csproj", "{8E2D2BA5-0654-4F80-BF58-012F63160780}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +31,14 @@ Global
 		{2F659E38-E265-415E-8CBB-5BF195301713}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F659E38-E265-415E-8CBB-5BF195301713}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F659E38-E265-415E-8CBB-5BF195301713}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DCC765F-C4E5-4205-8BF9-3B32132719F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DCC765F-C4E5-4205-8BF9-3B32132719F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DCC765F-C4E5-4205-8BF9-3B32132719F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DCC765F-C4E5-4205-8BF9-3B32132719F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E2D2BA5-0654-4F80-BF58-012F63160780}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E2D2BA5-0654-4F80-BF58-012F63160780}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E2D2BA5-0654-4F80-BF58-012F63160780}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E2D2BA5-0654-4F80-BF58-012F63160780}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

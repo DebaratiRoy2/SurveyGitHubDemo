@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "All Responses";
+}
+<h2>Submitted Survey Details</h2>
+@if (Model == null || Model.Count == 0)
+{
+    <div class="card">
+        <div class="card-body">
+            <p>No survey answers available currently. Kindly check back once user have submitted responses</p>
+        </div>
+    </div>
+}
+else
+{
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Survey Title</th>
+                    <th>Total number of responses submitted</th>
+                    <th>View Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var answer in Model)
+                {
+                    <tr>
+                        <td>@answer.SurveyTitle</td>
+                        <td>@answer.Total</td>
+                        <td>
+                            <a href="@Url.Action("Details", "SurveyAnswer", new { title = answer.SurveyTitle })" class="btn btn-primary">View Details</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
